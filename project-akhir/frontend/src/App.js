@@ -1,33 +1,26 @@
-// import logo from './logo.svg';
-// import './App.css';
 
-// function App() {
+// export default function App() {
 //   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
+//     <h1 className="text-3xl font-bold underline">
+//       Hello world!
+//     </h1>
+//   )
 // }
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DaftarBarang from "./components/DaftarBarang.jsx";
+import TambahBarang from "./components/TambahBarang.jsx";
 
-// export default App;
-
-export default function App() {
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <di>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element= {<DaftarBarang/>}/>
+        <Route path="/tambah" element={<TambahBarang/>}/>
+      </Routes>
+      </BrowserRouter>
+    </di>
   )
 }
+
+export default App;

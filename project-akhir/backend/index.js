@@ -9,7 +9,7 @@ const app=express()
 
 app.use(cors())
 app.use(express.json())
-app.use("/api", barangRoute);
+app.use(barangRoute);
 
 const PORT=8000
 app.listen(PORT,()=>{
