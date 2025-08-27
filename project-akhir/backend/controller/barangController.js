@@ -26,12 +26,14 @@ export const getBarangById = async (req, res) => {
 }
 
 export const createBarang = async (req, res) => {
-    const { nama, umur } = req.body
+    const { nama_barang, harga, stok } = req.body
     try {
         const response = await prisma.data_barang.create({
             data: {
-                nama: nama,
-                umur: Number(umur)
+                nama_barang: nama_barang,
+                harga: harga,
+                stok:parseInt(stok)
+                
 
             }
 
@@ -47,11 +49,11 @@ export const createBarang = async (req, res) => {
 
 export const updateBarang = async (req, res) => {
     const {id}=req.params
-    const { nama, umur } = req.body
+    const { nama_barang, harga, stok } = req.body
     try {
         const response = await prisma.data_barang.update({
             where:{id:Number(id)},
-            data:{nama, umur}
+            data:{nama_barang, harga, stok}
         })
            
         res.status(200).json(response)
